@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
   return (
-    <div className="relative min-h-screen w-full flex flex-col items-center bg-white dark:bg-black px-2 lg:px-24 py-10">
+    <div className="relative min-h-screen w-full flex flex-col items-center bg-white dark:bg-black px-2 lg:px-24 py-10 overflow-hidden">
       <div className="p-5 h-fit w-fit absolute top-0 right-0 z-50">
         <Button
           className="mr-3 bg-gray-700/50 dark:bg-white/50 hover:bg-gray-700/70 dark:hover:bg-white/70"
