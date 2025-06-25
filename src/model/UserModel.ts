@@ -15,12 +15,14 @@ export type Department = (typeof departments)[number];
 
 export interface User extends Document {
   name: string;
+  email: string;
   department: Department;
   isAdmin: boolean;
 }
 
 const UserSchema: Schema<User> = new Schema({
   name: { type: String, required: true },
+  email: { type: String, required: true },
   department: {
     type: String,
     enum: departments,

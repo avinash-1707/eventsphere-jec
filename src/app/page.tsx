@@ -21,7 +21,6 @@ export default function Home() {
         className="absolute inset-0 w-screen h-screen dark:invert-0 invert object-cover blur-lg opacity-80 pointer-events-none z-10 over"
       />
       <HeroSection />
-
       <EventsListing />
     </div>
   );
