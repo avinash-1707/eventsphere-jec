@@ -1,12 +1,12 @@
 import mongoose, { Document, Schema } from "mongoose";
-import { User } from "./UserModel";
+import UserModel from "./UserModel";
 
 export interface Event extends Document {
   bannerUrl: string;
   ename: string;
   datetime: Date;
   description: string;
-  registrations: User[];
+  registrations: mongoose.Types.ObjectId[];
 }
 
 const EventSchema: Schema<Event> = new Schema({

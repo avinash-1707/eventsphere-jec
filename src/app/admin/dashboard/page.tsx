@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Event } from "@/types/Event";
 import { signOut } from "next-auth/react";
+import formatDate from "@/helpers/formatDate";
 
 export default function AdminDashboard() {
   const [events, setEvents] = useState<Event[]>([]);
@@ -165,6 +166,11 @@ export default function AdminDashboard() {
               onClick={() => handleEventClick(event)}
             >
               <CardHeader>
+                <img
+                  src={event.bannerUrl}
+                  alt="event banner"
+                  className="w-full"
+                />
                 <CardTitle className="truncate">{event.ename}</CardTitle>
               </CardHeader>
               <CardContent>
@@ -172,10 +178,7 @@ export default function AdminDashboard() {
                   {event.description}
                 </p>
                 <p className="text-xs mt-2 text-gray-500">
-                  Date:{" "}
-                  {event.datetime
-                    ? new Date(event.datetime).toLocaleString()
-                    : event.datetime}
+                  {formatDate(event.datetime.toString())}
                 </p>
               </CardContent>
             </Card>
