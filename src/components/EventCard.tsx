@@ -30,14 +30,14 @@ export const EventCard: React.FC<EventCardProps> = ({
       <img
         src={bannerUrl}
         alt={name}
-        className="w-11/12 h-80 object-fit rounded-t-md mx-3.5"
+        className="w-11/12 h-80 object-fit rounded-t-md mx-4"
       />
     </CardHeader>
     <CardContent className="p-4">
-      <CardTitle className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+      <CardTitle className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-2">
         {name}
       </CardTitle>
-      <CardDescription className="text-zinc-600 dark:text-zinc-400 mb-2">
+      <CardDescription className="text-md text-zinc-600 dark:text-zinc-400 mb-4">
         {description}
       </CardDescription>
       <div className="text-sm text-zinc-500 dark:text-zinc-400">
@@ -47,7 +47,7 @@ export const EventCard: React.FC<EventCardProps> = ({
     <CardFooter>
       <Button
         onClick={onRegisterClick}
-        className="w-full bg-lime-600/80 hover:bg-lime-800/80 dark:bg-purple-700/70 dark:hover:bg-purple-600/80 text-black/90 dark:text-white/90"
+        className="w-full hover:scale-105 bg-lime-600/80 hover:bg-lime-800/80 dark:bg-purple-700/70 dark:hover:bg-purple-600/80 text-black/90 dark:text-white/90"
       >
         Register
       </Button>

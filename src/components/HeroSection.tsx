@@ -16,17 +16,17 @@ export default function HeroSection() {
   return (
     <div className="relative min-h-screen w-full flex flex-col items-center justify-start z-20">
       <motion.h1
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: "easeIn" }}
+        transition={{ duration: 0.6, ease: "easeIn" }}
         className={`${ab.className} mt-48 text-center text-5xl sm:text-5xl md:text-6xl lg:text-8xl dark:text-white/90 text-gray-800/90 bg-green-600 dark:bg-purple-600 p-4 rounded filter drop-shadow-[0_0_16px_rgba(192,132,252,0.8)] bg-clip-text font-bold`}
       >
         Event Sphere
       </motion.h1>
       <motion.h3
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.4, ease: "easeIn" }}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeIn" }}
         className="dark:text-white/70 text-black/70 text-xl lg:text-2xl font-semibold mt-3"
       >
         Your gateway to every college event.

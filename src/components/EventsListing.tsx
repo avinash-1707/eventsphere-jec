@@ -4,23 +4,7 @@ import EventCard from "./EventCard";
 import EventRegisterModal from "./EventRegisterModal";
 import { RegistrationRequest } from "@/types/RegistrationRequest";
 import axios from "axios";
-
-const events: Event[] = [
-  {
-    bannerUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6Nf7C7WJpGBrHY8NMlu5izG0-ZH9_RCPUXw&s",
-    ename: "Hacktober fest",
-    description: "This event consists of hackathon",
-    datetime: new Date(),
-  },
-  {
-    bannerUrl:
-      "https://miro.medium.com/v2/resize:fit:578/1*7Pjk4lUge51rficIGz8b0Q.jpeg",
-    ename: "Whatver",
-    description: "Random ass hackathon",
-    datetime: new Date(),
-  },
-];
+import { motion } from "motion/react";
 
 export default function EventsListing() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -62,10 +46,20 @@ export default function EventsListing() {
   };
   return (
     <div className="w-full flex flex-col items-center">
-      <h1 className="text-black/90 dark:text-white/90 font-semibold text-4xl">
+      <motion.h1
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-black/90 dark:text-white/90 font-semibold text-4xl"
+      >
         Register for event 👇
-      </h1>
-      <div className="my-12 w-full max-w-6xl rounded-2xl grid grid-cols-1 lg:grid-cols-2 gap-6 p-6">
+      </motion.h1>
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0, y: 70 }}
+        whileInView={{ scale: 1, opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="my-12 w-full max-w-6xl rounded-2xl grid grid-cols-1 lg:grid-cols-3 gap-6 p-6"
+      >
         {events.length > 0 ? (
           events.map((event, idx) => (
             <EventCard
@@ -80,7 +74,7 @@ export default function EventsListing() {
         ) : (
           <p>No events to display</p>
         )}
-      </div>
+      </motion.div>
       <EventRegisterModal
         open={modalOpen}
         onClose={() => setModalOpen(false)}

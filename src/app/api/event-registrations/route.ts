@@ -11,10 +11,6 @@ export async function GET(req: NextRequest) {
   try {
     await dbConnect();
 
-    console.log("Registered models:", Object.keys(mongoose.models));
-    console.log("User model exists:", !!mongoose.models.User);
-    console.log("Event model exists:", !!mongoose.models.Event);
-
     const ename = req.nextUrl.searchParams.get("ename");
     if (!ename) {
       return NextResponse.json({ error: "Missing name" }, { status: 400 });

@@ -22,7 +22,7 @@ export default function DarkModeToggle() {
       size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       aria-label="Toggle dark mode"
-      className={`z-20 ${
+      className={`z-20 cursor-pointer ${
         theme == "dark"
           ? "bg-white/80 border-2 border-gray-700/80"
           : "bg-white/20 border-2 border-gray-700/20"
