@@ -20,6 +20,7 @@ import formatDate from "@/helpers/formatDate";
 import { Separator } from "@/components/ui/separator";
 import DarkModeToggle from "@/components/ui/ModeToggle";
 import { motion } from "motion/react";
+import { toast } from "sonner";
 
 export default function AdminDashboard() {
   const [events, setEvents] = useState<Event[]>([]);
@@ -63,11 +64,12 @@ export default function AdminDashboard() {
       setOpen(false);
       setForm({ bannerUrl: "", ename: "", datetime: "", description: "" });
       setLoading(true);
+      toast("✅ Event Registered successfully");
       // Refresh events
       const res = await axios.get("/api/get-events");
       setEvents(res.data);
     } catch (err) {
-      // Optionally handle error
+      toast("❌ Some error in creating event");
     } finally {
       setSubmitting(false);
       setLoading(false);

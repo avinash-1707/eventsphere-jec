@@ -5,13 +5,17 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
 import DarkModeToggle from "@/components/ui/ModeToggle";
+import { toast } from "sonner";
 
 export default function AdminLoginPage() {
+  const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
 
   const handleLogin = async () => {
+    toast("Checking credentials... ");
+    setLoading(true);
     const res = await signIn("credentials", {
       redirect: false,
       username,
@@ -21,8 +25,11 @@ export default function AdminLoginPage() {
     if (res?.ok) {
       router.push("/admin/dashboard");
     } else {
-      alert("Invalid credentials");
+      toast("❌ Invalid credentials!", {
+        description: "Please check username and password",
+      });
     }
+    setLoading(false);
   };
 
   return (
@@ -56,6 +63,7 @@ export default function AdminLoginPage() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleLogin}
+          disabled={loading}
           className="w-full rounded-2xl bg-black text-white mt-2 py-2"
         >
           Login

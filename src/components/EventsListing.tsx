@@ -5,6 +5,7 @@ import EventRegisterModal from "./EventRegisterModal";
 import { RegistrationRequest } from "@/types/RegistrationRequest";
 import axios from "axios";
 import { motion } from "motion/react";
+import { toast } from "sonner";
 
 export default function EventsListing() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -33,15 +34,14 @@ export default function EventsListing() {
       const response = await axios.post("/api/register", data);
 
       if (response.data.success) {
-        console.log("✅ Registered:", response.data.message);
+        toast("✅ Registered", { description: response.data.message });
       } else {
-        console.warn("⚠️ Server responded:", response.data.message);
+        toast("⚠️ Server responded", { description: response.data.message });
       }
-    } catch (error: any) {
-      console.error(
-        "❌ Registration error:",
-        error.response?.data || error.message
-      );
+    } catch (error) {
+      toast("❌ Registration error", {
+        description: "Some error occured while registering!",
+      });
     }
   };
   return (
