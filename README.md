@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EventSphere-JEC 🎉
 
-## Getting Started
+EventSphere-JEC is a modern event management platform designed for students to register for campus events while giving administrators the ability to create and manage events effortlessly.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- 🎫 Student registration for events
+- 🛠 Admin panel to create and manage events
+- 🔐 Authentication with NextAuth.js
+- 📦 API handling with Axios
+- ⚡ Fast, responsive UI with React & Tailwind CSS
+
+## 🧱 Tech Stack
+
+| Layer            | Technology                  |
+|------------------|-----------------------------|
+| Frontend         | TypeScript, React, Tailwind CSS |
+| Backend/API      | Next.js API Routes, Axios   |
+| Authentication   | NextAuth.js                 |
+| Database         | MongoDB, Mongoose           |
+| Deployment       | Vercel                      |
+
+## 📂 Project Structure (Simplified)
+
+```
+/app
+  └── api/             # API routes
+/components           # Reusable UI components
+/context              # Global state (e.g., auth/session)
+/lib                  # Utilities and helpers
+/models               # Mongoose schemas
+/public               # Public assets
+/styles               # Tailwind and global styles
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/eventsphere-jec.git
+cd eventsphere-jec
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 2. Install Dependencies
+```bash
+npm install
+```
 
-## Learn More
+### 3. Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+Create a `.env.local` file and configure the following:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+MONGODB_URI=your_mongo_uri
+NEXTAUTH_SECRET=your_secret_key
+NEXTAUTH_URL=http://localhost:3000
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Run Locally
+```bash
+npm run dev
+```
 
-## Deploy on Vercel
+The app will be available at [http://localhost:3000](http://localhost:3000)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠 Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployed using **Vercel**:  
+> [https://eventsphere-jec.vercel.app](https://eventsphere-jec.vercel.app)
+
+## 📌 Future Enhancements
+
+- Admin dashboard with analytics
+- Email notifications on event registration
+- RSVP & waitlist system
+- Event reminders
+
+## 🤝 Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
