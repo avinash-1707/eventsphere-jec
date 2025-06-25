@@ -68,13 +68,6 @@ The app will be available at [http://localhost:3000](http://localhost:3000)
 Deployed using **Vercel**:  
 > [https://eventsphere-jec.vercel.app](https://eventsphere-jec.vercel.app)
 
-## 📌 Future Enhancements
-
-- Admin dashboard with analytics
-- Email notifications on event registration
-- RSVP & waitlist system
-- Event reminders
-
 ## 🤝 Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
